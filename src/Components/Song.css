@@ -1,0 +1,14 @@
+.Song {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border-bottom: 1px solid black;
+    span {
+        width: 200px;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
