@@ -4,19 +4,22 @@ import "./Song.css"
 const API = import.meta.env.VITE_API_URL
 
 export default function Song({ song }) {
+    
     let navigate = useNavigate()
 
     return (
-        <div className="Song">
-            <div className="song__img">
-                <span>
-                <img src={song.img_url} alt={song.name} />
-                </span>
+        <Link to={`/songs/${song.id}`}>
+            <div className="Song">
+                <div className="song__img">
+                    <span>
+                    <img src={song.img_url} alt={song.name} />
+                    </span>
+                </div>
+                <div className="song__details">
+                    <p className="song__name">{song.name}</p>
+                    <p className="song__artist">{song.artist}</p>
+                </div>
             </div>
-            <div className="song__details">
-                <p className="song__name">{song.name}</p>
-                <p className="song__artist">{song.artist}</p>
-            </div>
-        </div>
+        </Link>
     )
 }
