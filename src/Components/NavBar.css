@@ -3,7 +3,7 @@ nav {
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
-    background-color: #D90429;
+    background-color: #041B15;
     position: absolute;
     margin: 0;
     padding: 0;
@@ -19,6 +19,12 @@ nav {
         padding: 5px;
         border-radius: 10px;
     }
+    button:hover {
+        background-color: #4CE0D2;
+        color: #041B15;
+        padding: 5px 10px;
+        border-radius: 25px;
+    }
 
     button {
         margin: 0;
@@ -28,5 +34,7 @@ nav {
         color: #EDF2F4;
         border: none;
         cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 25px;
     }
 }

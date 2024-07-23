@@ -1,8 +1,8 @@
 .Songs {
     margin-top: 100px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid black;
+    width: max-content;
+    border: 5px solid white;
+    background-color: 041B15;
+    color: white;
+    border-radius: 25px;
 }

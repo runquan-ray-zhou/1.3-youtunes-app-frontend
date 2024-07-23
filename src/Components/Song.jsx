@@ -8,21 +8,15 @@ export default function Song({ song }) {
 
     return (
         <div className="Song">
-            <span className="song__name">
-            <p>{song.name}</p>
-            </span>
-            <span className="song__artist">
-            <p>{song.artist}</p>
-            </span>
-            <span className="song__album">
-            <p>{song.album}</p>
-            </span>
-            <span className="song__time">
-            <p>{song.time}</p>
-            </span>
-            <span className="song__isFavorite">
-            <p>{song.is_favorite ? `❤️` : `❌`}</p>
-            </span>
+            <div className="song__img">
+                <span>
+                <img src={song.img_url} alt={song.name} />
+                </span>
+            </div>
+            <div className="song__details">
+                <p className="song__name">{song.name}</p>
+                <p className="song__artist">{song.artist}</p>
+            </div>
         </div>
     )
 }
