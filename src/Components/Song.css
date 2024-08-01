@@ -17,10 +17,14 @@
         text-align: center;
     }
     img {   
-        padding:10px;
         margin-right: 20px;
         width: 100px;
+        height: 100px;
         border-radius: 50%;
+        border: 5px solid white;
+    }
+    img:hover {
+        border: 5px solid #4CE0D2;
     }
     .song__img {
         display: flex;
