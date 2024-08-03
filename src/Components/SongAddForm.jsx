@@ -28,7 +28,6 @@ export default function SongAddForm() {
         })
         .then(res => res.json())
         .then((resJSON) => {
-            console.log(resJSON)
             navigate(`/songs/${resJSON.id}`)
         })
         .catch(error => console.error(error))
