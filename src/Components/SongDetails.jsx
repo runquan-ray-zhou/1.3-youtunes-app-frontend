@@ -23,6 +23,17 @@ export default function SongDetails() {
         })
     }, [id, navigate])
 
+    function handleDelete() {
+        fetch(`${API}/songs/${id}`, {
+            method: "DELETE",
+        })
+        .then(() => navigate('/songs'))
+        .catch(() => {
+            navigate("/notfound")
+            console.error(error)
+        })
+    }
+
     return (
         <div className="SongDetails">
                 <div>
@@ -47,7 +58,7 @@ export default function SongDetails() {
                 <div className="song__buttons">
                 <i className="fa-solid fa-circle-arrow-left" onClick={() => navigate("/songs")}></i>
                 <i className="fa-solid fa-gear"></i>
-                <i className="fa-solid fa-trash-can"></i>
+                <i className="fa-solid fa-trash-can" onClick={handleDelete}></i>
                 </div>
         </div>
     )
