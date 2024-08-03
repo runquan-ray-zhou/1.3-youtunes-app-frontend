@@ -25,6 +25,7 @@
     }
     img:hover {
         border: 5px solid #4CE0D2;
+        cursor:pointer;
     }
     .song__img {
         display: flex;

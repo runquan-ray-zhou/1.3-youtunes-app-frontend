@@ -55,19 +55,12 @@ export default function SongDetails() {
                 ></iframe>
                 </div>
                 <div className="song__details">
-                    <p className="song__id">{song.id}.</p>
-                        <div className="song_artist-name">
-                            <p className="song__artist">{song.artist}</p>
-                            <p>&nbsp;{"-"}&nbsp;</p>
-                            <p className="song__name">{song.name}</p>
-                        </div>
-                    <div className="song__time-container">
-                        <p className="song__time" style={{animation: moveTimer ? "slide 223s ease-in" : "none"}}>{song.time}</p>
-                    </div>
+                        <p className="song__name">{song.name}</p>
+                        <p className="song__artist">{song.artist}</p>
                 </div>
                 <div className="song__img">
                     <span>
-                    <img src={song.img_url} alt={song.name} />
+                        <img src={song.img_url} alt={song.name} />
                     </span>
                 </div>
         </div>

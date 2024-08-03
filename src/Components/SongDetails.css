@@ -1,30 +1,25 @@
 .SongDetails{
 
-    .song_artist-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .song__details {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .song__name {
+        font-size: 2em;
     }
     img {
         width: 300px;
         border: 5px solid white ;
     }
+    img:hover {
+        cursor:auto;
+    }
     p {
         color: white;
-    }
-    .song__time-container {
-        /* display: flex; */
-    }
-}
-
-.song__time {
-    position: relative;
-    /* animation: slide 223s ease-in; */
-    animation-fill-mode: forwards;
-}
-@keyframes slide {
-    0% {
-        left: 0;
-    } 
-    100% {
-        left: 300px;
     }
 }

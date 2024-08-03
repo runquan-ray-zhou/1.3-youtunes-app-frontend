@@ -11,6 +11,6 @@ html {
     -moz-osx-font-smoothing: grayscale;
   }
   
-  img:hover {
-    cursor:auto;
-  }
+  /* img:hover {
+    cursor:pointer;
+  } */
