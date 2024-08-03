@@ -30,7 +30,7 @@ export default function SongDetails() {
                     width="300"
                     height="175"
                     style={{border: "none"}}
-                    src={`https://www.youtube.com/embed/${song.vid_url}`}
+                    src={`https://www.youtube.com/embed/${song.vid_url}?autoplay=1`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                 ></iframe>
