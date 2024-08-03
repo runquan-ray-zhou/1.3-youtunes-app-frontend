@@ -57,7 +57,7 @@ export default function SongDetails() {
                 </div>
                 <div className="song__buttons">
                 <i className="fa-solid fa-circle-arrow-left" onClick={() => navigate("/songs")}></i>
-                <i className="fa-solid fa-gear"></i>
+                <i className="fa-solid fa-gear" onClick={() => navigate(`/songs/${id}/edit`)}></i>
                 <i className="fa-solid fa-trash-can" onClick={handleDelete}></i>
                 </div>
         </div>
