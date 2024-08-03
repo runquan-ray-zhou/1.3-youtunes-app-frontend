@@ -21,7 +21,6 @@ export default function Songs() {
         })
     }, [])
 
-
     return (
         <div className="Songs">
             {songs.map((song) => {
