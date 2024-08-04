@@ -22,10 +22,10 @@
         height: 100px;
         border-radius: 50%;
         border: 5px solid white;
+        cursor:pointer;
     }
     img:hover {
         border: 5px solid #4CE0D2;
-        cursor:pointer;
     }
     .song__img {
         display: flex;
