@@ -30,7 +30,6 @@ function App() {
           </Routes>
         </main>
       </Router>
-      {/* <h1>Welcome to YouTune!</h1> */}
     </div>
   )
 }

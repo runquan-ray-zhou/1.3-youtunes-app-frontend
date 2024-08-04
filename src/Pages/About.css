@@ -39,12 +39,12 @@
         border: 5px solid #4CE0D2;
     }
     .About__icons {
-        width: 330px;
+        width: 350px;
         margin-top: 50px;
         display: flex;
         align-items: center;
         a {
-            margin: -14px;
+            margin: -12px;
         }
     }
     p {
