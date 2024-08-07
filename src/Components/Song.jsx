@@ -8,7 +8,7 @@ export default function Song({ song }) {
     let navigate = useNavigate()
 
     return (
-        <Link to={`/songs/${song.id}`}>
+        <Link to={`/artists/${song.artist_id}/songs/${song.id}`}>
             <div className="Song">
                 <div className="song__img">
                     <span>

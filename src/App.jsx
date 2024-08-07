@@ -22,10 +22,12 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/songs" element={<Index />} />
-            <Route path="/songs/add" element={<Add />} />
-            <Route path="/songs/:id" element={<Show />} />
-            <Route path="/songs/:id/edit" element={<Edit />} />
+            <Route path="/allsongs" element={<Index />} />
+            {/* <Route path="/artists/songs/add" element={<Add />} /> */}
+            <Route path="/artists/:artist_id" element={<Index />} />
+            <Route path="/artists/:artist_id/songs" element={<Show />} />
+            <Route path="/artists/:artist_id/songs/:id" element={<Show />} />
+            <Route path="/artists/:artist_id/songs/:id/edit" element={<Edit />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Artist from './Artist.jsx'
 import "./Artists.css"
 
-// const API = import.meta.env.VITE_API_URL
+const API = import.meta.env.VITE_API_URL
 
 export default function Artists() {
 
@@ -11,25 +11,24 @@ export default function Artists() {
 
     const [ artists, setArtists ] = useState([])
     
-    // useEffect(() =>{
-    //     fetch(`${API}/artists`)
-    //     .then((response) => response.json())
-    //     .then((responseJSON) => setArtists(responseJSON))
-    //     .catch((error) => {
-    //         navigate("/notfound")
-    //         console.error(error)
-    //     })
-    // }, [])
+    useEffect(() =>{
+        fetch(`${API}/artists`)
+        .then((response) => response.json())
+        .then((responseJSON) => setArtists(responseJSON))
+        .catch((error) => {
+            navigate("/notfound")
+            console.error(error)
+        })
+    }, [])
 
     return (
         <div className="Artists">
-            <h1>This is a list of Artist</h1>
-            {/* {artists.map((artist) => {
+            {artists.map((artist) => {
                 return <Artist
                 key={artist.id}
                 artist={artist}
                 />
-            })} */}
+            })}
         </div>
     )
 }

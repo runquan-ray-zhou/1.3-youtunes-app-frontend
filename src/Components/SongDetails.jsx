@@ -9,25 +9,25 @@ export default function SongDetails() {
     
     const [ song, setSong ] = useState({})
     
-    const { id } = useParams()
+    const { id, artist_id } = useParams()
     
     let navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`${API}/songs/${id}`)
+        fetch(`${API}/artists/${artist_id}/songs/${id}`)
         .then((response) => response.json())
-        .then((responseJSON) => setSong(responseJSON))
+        .then((responseJSON) => setSong(responseJSON.song))
         .catch(() => {
             navigate("/notfound")
             console.error(error)
         })
-    }, [id, navigate])
+    }, [id, artist_id, navigate])
 
     function handleDelete() {
-        fetch(`${API}/songs/${id}`, {
+        fetch(`${API}/artists/${artist_id}/songs/${id}`, {
             method: "DELETE",
         })
-        .then(() => navigate('/songs'))
+        .then(() => navigate('/allsongs'))
         .catch(() => {
             navigate("/notfound")
             console.error(error)

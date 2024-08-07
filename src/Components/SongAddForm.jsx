@@ -19,7 +19,7 @@ export default function SongAddForm() {
     })
 
     function addSongToLibrary() {
-        fetch(`${API}/songs`, {
+        fetch(`${API}/artists/songs`, {
             method: "POST",
             body: JSON.stringify(newSong),
             headers: {

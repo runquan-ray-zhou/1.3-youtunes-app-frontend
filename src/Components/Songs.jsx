@@ -12,7 +12,7 @@ export default function Songs() {
     const [ songs, setSongs ] = useState([])
     
     useEffect(() =>{
-        fetch(`${API}/songs`)
+        fetch(`${API}/allsongs`)
         .then((response) => response.json())
         .then((responseJSON) => setSongs(responseJSON))
         .catch((error) => {

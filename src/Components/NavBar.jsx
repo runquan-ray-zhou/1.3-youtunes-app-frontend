@@ -11,10 +11,10 @@ export default function NavBar() {
             <Link to="/home">
                 <button>Home</button>
             </Link>
-            <Link to="/songs">
+            <Link to="/allsongs">
                 <button>Library</button>
             </Link>
-            <Link to="/songs/add">
+            <Link to="/artists/songs/add">
                 <button>Add</button>
             </Link>
             <Link to="/about">
