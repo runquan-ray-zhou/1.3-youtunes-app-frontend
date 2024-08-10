@@ -9,30 +9,34 @@ export default function SongDetails() {
     
     const [ song, setSong ] = useState({})
     
-    const { id, artist_id } = useParams()
+    const { id, album_id } = useParams()
+
+    console.log(album_id)
     
     let navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`${API}/artists/${artist_id}/songs/${id}`)
+        fetch(`${API}/albums/${album_id}/songs/${id}`)
         .then((response) => response.json())
         .then((responseJSON) => setSong(responseJSON.song))
         .catch(() => {
             navigate("/notfound")
             console.error(error)
         })
-    }, [id, artist_id, navigate])
+    }, [id, album_id, navigate])
 
-    function handleDelete() {
-        fetch(`${API}/artists/${artist_id}/songs/${id}`, {
-            method: "DELETE",
-        })
-        .then(() => navigate('/allsongs'))
-        .catch(() => {
-            navigate("/notfound")
-            console.error(error)
-        })
-    }
+    console.log(song)
+
+    // function handleDelete() {
+    //     fetch(`${API}/artists/${artist_id}/songs/${id}`, {
+    //         method: "DELETE",
+    //     })
+    //     .then(() => navigate('/allsongs'))
+    //     .catch(() => {
+    //         navigate("/notfound")
+    //         console.error(error)
+    //     })
+    // }
 
     return (
         <div className="SongDetails">
@@ -41,14 +45,14 @@ export default function SongDetails() {
                     width="300"
                     height="175"
                     style={{border: "none"}}
-                    src={`https://www.youtube.com/embed/${song.vid_url}?autoplay=1`}
+                    src={`https://www.youtube.com/embed/${song.song_vid_url}?autoplay=1`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                 ></iframe>
                 </div>
                 <div className="song__details">
-                        <p className="song__name">{song.name}</p>
-                        <p className="song__artist">{song.artist}</p>
+                        <p className="song__name">{song.song_name}</p>
+                        <p className="song__artist">{song.song_artist}</p>
                 </div>
                 <div className="song__img">
                     <span>
@@ -56,9 +60,9 @@ export default function SongDetails() {
                     </span>
                 </div>
                 <div className="song__buttons">
-                <i className="fa-solid fa-circle-arrow-left" onClick={() => navigate("/songs")}></i>
+                <i className="fa-solid fa-circle-arrow-left" onClick={() => navigate(`/artists/${song.artist_id}/songs`)}></i>
                 <i className="fa-solid fa-gear" onClick={() => navigate(`/songs/${id}/edit`)}></i>
-                <i className="fa-solid fa-trash-can" onClick={handleDelete}></i>
+                {/* <i className="fa-solid fa-trash-can" onClick={handleDelete}></i> */}
                 </div>
         </div>
     )

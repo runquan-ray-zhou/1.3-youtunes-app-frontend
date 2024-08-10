@@ -20,8 +20,9 @@ export default function ArtistDetails() {
         fetch(`${API}/artists/${artist_id}/songs`)
         .then((response) => response.json())
         .then((responseJSON) => {
-            setArtist(responseJSON)
-            setArtistSongs(responseJSON.listOfSongs)
+            console.log(responseJSON)
+            setArtist(responseJSON.artist)
+            setArtistSongs(responseJSON.songs)
         }
         )
         .catch(() => {
@@ -45,11 +46,11 @@ export default function ArtistDetails() {
         <div className="ArtistDetails">
                 <div className="artist__img">
                     <span>
-                        <img src={artist.img_url} alt={artist.name} />
+                        <img src={artist.artist_img_url} alt={artist.artist_name} />
                     </span>
                 </div>
                 <div className="artist__details">
-                        <p className="artist__name">{artist.name}</p>
+                        <p className="artist__name">{artist.artist_name}</p>
                         <p className="artist__main_genre">{artist.main_genre}</p>
                 </div>
                 <div className="artist_songs">
@@ -61,9 +62,9 @@ export default function ArtistDetails() {
                 })}
                 </div>
                 <div className="artist__buttons">
-                <i className="fa-solid fa-circle-arrow-left" onClick={() => navigate(`/home`)}></i>
-                <i className="fa-solid fa-gear" onClick={() => navigate(`/artist/${artist_id}songs/${id}/edit`)}></i>
-                <i className="fa-solid fa-trash-can" onClick={handleDelete}></i>
+                    <i className="fa-solid fa-circle-arrow-left" onClick={() => navigate(`/home`)}></i>
+                    <i className="fa-solid fa-gear" onClick={() => navigate(`/artist/${artist_id}songs/${id}/edit`)}></i>
+                    <i className="fa-solid fa-trash-can" onClick={handleDelete}></i>
                 </div>
         </div>
     )

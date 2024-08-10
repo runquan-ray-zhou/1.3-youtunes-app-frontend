@@ -12,11 +12,11 @@ export default function Artist({ artist }) {
             <div className="Artist">
                 <div className="artist__img">
                     <span>
-                    <img src={artist.img_url} alt={artist.name} />
+                    <img src={artist.artist_img_url} alt={artist.artist_name} />
                     </span>
                 </div>
                 <div className="artist__details">
-                    <p className="artist__name">{artist.name}</p>
+                    <p className="artist__name">{artist.artist_name}</p>
                     <p className="artist__main_genre">{artist.main_genre}</p>
                 </div>
             </div>

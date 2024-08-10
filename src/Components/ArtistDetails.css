@@ -19,15 +19,17 @@
     }
     .artist_songs {
         img {   
-            margin-right: 20px;
-            width: 100px;
-            height: 100px;
+            /* margin-right: 20px;
+            margin-bottom: 25px;
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
-            border: 5px solid white;
-            cursor:pointer;
+            border: 1px solid white;
+            cursor:pointer; */
+            display: none;
         }
         img:hover {
-            border: 5px solid #4CE0D2;
+            border: 1px solid #4CE0D2;
         }
         p:hover {
             color: #4CE0D2;
