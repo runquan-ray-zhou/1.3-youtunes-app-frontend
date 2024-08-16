@@ -1,4 +1,4 @@
-.ArtistDetails{
+.AlbumDetails{
     padding: 20px 10px;
     margin-top: 20px;
     width: max-content;
@@ -9,15 +9,18 @@
     flex-direction: column;
     align-items: center;
     
-    .artist__details {
+    .album__details {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .artist__name {
+    .album__name {
         font-size: 2em;
+        width: 300px;
+        word-wrap: break-word;
+        text-align: start;
     }
-    .artist_songs {
+    .album_songs {
         img {   
             display: none;
         }
@@ -49,7 +52,7 @@
     .fa-solid:hover {
         color: #4CE0D2;
     }
-    .artist__buttons {
+    .album__buttons {
         margin-top: 10px;
     }
 

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Album from './Artist.jsx'
+import Album from './Album.jsx'
 import "./Albums.css"
 
-// const API = import.meta.env.VITE_API_URL
+const API = import.meta.env.VITE_API_URL
 
 export default function Albums() {
 
@@ -11,25 +11,24 @@ export default function Albums() {
 
     const [ albums, setAlbums ] = useState([])
     
-    // useEffect(() =>{
-    //     fetch(`${API}/albums`)
-    //     .then((response) => response.json())
-    //     .then((responseJSON) => setAlbums(responseJSON))
-    //     .catch((error) => {
-    //         navigate("/notfound")
-    //         console.error(error)
-    //     })
-    // }, [])
+    useEffect(() =>{
+        fetch(`${API}/albums`)
+        .then((response) => response.json())
+        .then((responseJSON) => setAlbums(responseJSON))
+        .catch((error) => {
+            navigate("/notfound")
+            console.error(error)
+        })
+    }, [])
 
     return (
         <div className="Albums">
-            <h1>This is a list of Albums</h1>
-            {/* {artists.map((albums) => {
+            {albums.map((album) => {
                 return <Album
                 key={album.id}
                 album={album}
                 />
-            })} */}
+            })}
         </div>
     )
 }

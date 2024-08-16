@@ -48,10 +48,19 @@
     .song__name {
         font-size: large;
         font-weight: 900;
+        align-self: center;
+    }
+    .song__time {
+        align-self: center;
     }
     .song__artist {
         font-size: small;
         font-weight: 100;
+    }
+    .song__album {
+        width: 100px;
+        word-wrap: break-word;
+        text-align: start;
     }
 }
 
