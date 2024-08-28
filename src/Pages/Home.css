@@ -5,10 +5,11 @@
     text-align: center;
     gap: 10px;
     color: white;
+    cursor: pointer;
     .Home__header {
         display: flex;
         justify-content: space-evenly;
-        
+
         h1:hover {
             color: #4CE0D2; 
         }

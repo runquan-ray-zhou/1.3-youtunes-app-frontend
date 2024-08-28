@@ -23,12 +23,17 @@ export default function Songs() {
 
     return (
         <div className="Songs">
-            {songs.map((song) => {
-                return <Song
-                key={song.id}
-                song={song}
-                />
-            })}
+            <div className='Songs__header'>
+                <h1>Youtunes Songs</h1>
+            </div>
+            <div className='Songs__content'>
+                {songs.map((song) => {
+                    return <Song
+                    key={song.id}
+                    song={song}
+                    />
+                })}
+            </div>
         </div>
     )
 }

@@ -5,4 +5,11 @@
     background-color: 041B15;
     color: white;
     border-radius: 25px;
+    text-align: center;
+    height: 100vh;
+    .Songs__content {
+        float:left;
+        overflow-y: auto;
+        height: 80vh;
+    }
 }
