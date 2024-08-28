@@ -23,6 +23,7 @@ export default function Artists() {
 
     return (
         <div className="Artists">
+            <h1>Youtunes Artists</h1>
             {artists.map((artist) => {
                 return <Artist
                 key={artist.id}

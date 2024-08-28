@@ -23,7 +23,7 @@ export default function Playlists() {
 
     return (
         <div className="Playlists">
-            <h1>This is a list of Playlist</h1>
+            <h1>Youtunes Playlists</h1>
             {/* {playlists.map((playlist) => {
                 return <Playlist
                 key={playlist.id}

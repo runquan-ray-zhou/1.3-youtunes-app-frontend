@@ -1,7 +1,22 @@
 .Home {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
     gap: 10px;
     color: white;
+    .Home__header {
+        display: flex;
+        justify-content: space-evenly;
+        
+        h1:hover {
+            color: #4CE0D2; 
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .Home {
+        flex-direction: column;
+    }
 }

@@ -23,6 +23,7 @@ export default function Albums() {
 
     return (
         <div className="Albums">
+            <h1>Youtunes Albums</h1>
             {albums.map((album) => {
                 return <Album
                 key={album.id}
