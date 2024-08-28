@@ -9,17 +9,19 @@ export default function SongAddForm() {
     let navigate = useNavigate();
 
     const [newSong, setNewSong] = useState({
-        name: "",
-        artist: "",
+        song_name: "",
+        song_artist: "",
         album: "",
         time: "",
         img_url: "",
-        vid_url: "",
+        song_vid_url: "",
+        // album_id: 1,
+        // artist_id: 1,
         is_favorite: false,
     })
 
     function addSongToLibrary() {
-        fetch(`${API}/artists/songs`, {
+        fetch(`${API}/addsong`, {
             method: "POST",
             body: JSON.stringify(newSong),
             headers: {
@@ -28,7 +30,7 @@ export default function SongAddForm() {
         })
         .then(res => res.json())
         .then((resJSON) => {
-            navigate(`/songs/${resJSON.id}`)
+            navigate(`/albums/${resJSON.album_id}/songs/${resJSON.id}`)
         })
         .catch(error => console.error(error))
     }
@@ -50,25 +52,25 @@ export default function SongAddForm() {
         <div className="AddFrom">
             <h1>Add A Song</h1>
             <form className="AddForm__form" onSubmit={handleSubmit}>
-                <label htmlFor="name">
+                <label htmlFor="song_name">
                     Song Name:
                     <br />
                     <input 
                         type="text"
-                        id="name"
-                        value={newSong.name}
+                        id="song_name"
+                        value={newSong.song_name}
                         onChange={handleTextChange}
                         required
                     />
                 </label>
                 <br />
-                <label htmlFor="artist">
+                <label htmlFor="song_artist">
                     Artist Name:
                     <br />
                     <input 
                         type="text"
-                        id="artist"
-                        value={newSong.artist}
+                        id="song_artist"
+                        value={newSong.song_artist}
                         onChange={handleTextChange}
                         required
                     />
@@ -108,13 +110,13 @@ export default function SongAddForm() {
                     />
                 </label>
                 <br />
-                <label htmlFor="vid_url">
+                <label htmlFor="song_vid_url">
                     Youtube URL:
                     <br />
                     <input 
                         type="text"
-                        id="vid_url"
-                        value={newSong.vid_url}
+                        id="song_vid_url"
+                        value={newSong.song_vid_url}
                         onChange={handleTextChange}
                         required
                     />
