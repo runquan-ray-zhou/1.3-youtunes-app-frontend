@@ -1,4 +1,4 @@
-.SongEditFrom {
+.EditFrom {
     padding: 20px 10px;
     margin-top: 20px;
     width: max-content;
@@ -41,7 +41,7 @@
     }
 }
 
-.SongEditForm__form {
+.EditForm__form {
     width: 330px;
     display: flex;
     flex-direction: column;

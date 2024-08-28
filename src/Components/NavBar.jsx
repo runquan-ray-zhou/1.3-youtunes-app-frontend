@@ -14,7 +14,7 @@ export default function NavBar() {
             <Link to="/allsongs">
                 <button>Library</button>
             </Link>
-            <Link to="/artists/songs/add">
+            <Link to="/add">
                 <button>Add</button>
             </Link>
             <Link to="/about">

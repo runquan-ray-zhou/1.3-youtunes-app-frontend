@@ -27,16 +27,16 @@ export default function SongDetails() {
 
     console.log(song)
 
-    // function handleDelete() {
-    //     fetch(`${API}/artists/${artist_id}/songs/${id}`, {
-    //         method: "DELETE",
-    //     })
-    //     .then(() => navigate('/allsongs'))
-    //     .catch(() => {
-    //         navigate("/notfound")
-    //         console.error(error)
-    //     })
-    // }
+    function handleDelete() {
+        fetch(`${API}/artists/${artist_id}/songs/${id}`, {
+            method: "DELETE",
+        })
+        .then(() => navigate('/allsongs'))
+        .catch(() => {
+            navigate("/notfound")
+            console.error(error)
+        })
+    }
 
     return (
         <div className="SongDetails">
@@ -62,7 +62,7 @@ export default function SongDetails() {
                 <div className="song__buttons">
                 <i className="fa-solid fa-circle-arrow-left" onClick={() => navigate(`/artists/${song.artist_id}/songs`)}></i>
                 <i className="fa-solid fa-gear" onClick={() => navigate(`/songs/${id}/edit`)}></i>
-                {/* <i className="fa-solid fa-trash-can" onClick={handleDelete}></i> */}
+                <i className="fa-solid fa-trash-can" onClick={handleDelete}></i>
                 </div>
         </div>
     )

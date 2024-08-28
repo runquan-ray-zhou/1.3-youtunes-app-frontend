@@ -48,6 +48,9 @@
         font-size: large;
         font-weight: 900;
         align-self: center;
+        text-align: start;
+        width: 180px;
+        word-wrap: break-word;
     }
     .song__time {
         font-weight: 900;

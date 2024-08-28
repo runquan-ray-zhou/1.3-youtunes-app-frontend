@@ -23,7 +23,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/allsongs" element={<Index />} />
-            {/* <Route path="/artists/songs/add" element={<Add />} /> */}
+            <Route path="/add" element={<Add />} />
             <Route path="/artists/:artist_id" element={<Show />} />
             <Route path="/artists/:artist_id/songs" element={<Show />} />
             <Route path="/albums/:album_id" element={<Show />} />

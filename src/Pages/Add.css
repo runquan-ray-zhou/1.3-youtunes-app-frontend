@@ -1,0 +1,16 @@
+.Add {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    color: white;
+    cursor: pointer;
+    .Add__header {
+        display: flex;
+        justify-content: space-evenly;
+
+        h1:hover {
+            color: #4CE0D2; 
+        }
+    }
+}

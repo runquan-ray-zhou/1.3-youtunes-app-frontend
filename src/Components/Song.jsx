@@ -18,9 +18,8 @@ export default function Song({ song }) {
                 <div className="song__details">
                     <p className="song__album">{song.album}</p>
                     <p className="song__name"> - {song.song_name}</p>
-                    {/* <p className="song__artist">{song.song_artist}</p> */}
                     &nbsp;
-                    <p className="song__time"> - {song.time}</p>
+                    <p className="song__time">{song.time}</p>
                 </div>
             </div>
         </Link>

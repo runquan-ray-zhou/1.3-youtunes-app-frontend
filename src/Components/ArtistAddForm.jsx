@@ -4,21 +4,19 @@ import "./AddForm.css"
 
 const API = import.meta.env.VITE_API_URL
 
-export default function SongAddForm() {
+export default function ArtistAddForm() {
 
     let navigate = useNavigate();
 
-    const [newSong, setNewSong] = useState({
-        name: "",
-        artist: "",
-        album: "",
-        time: "",
-        img_url: "",
-        vid_url: "",
+    const [newArtist, setNewArtist] = useState({
+        artist_name: "",
+        website_url: "",
+        artist_img_url: "",
+        main_genre: "",
         is_favorite: false,
     })
 
-    function addSongToLibrary() {
+    function addArtistToLibrary() {
         fetch(`${API}/artists/songs`, {
             method: "POST",
             body: JSON.stringify(newSong),
@@ -34,89 +32,65 @@ export default function SongAddForm() {
     }
 
     function handleTextChange(e) {
-        setNewSong({...newSong, [e.target.id]: e.target.value})
+        setNewArtist({...newArtist, [e.target.id]: e.target.value})
         
     }
     
     function handleCheckboxChange() {
-        setNewSong({...newSong, is_favorite: !newSong.is_favorite})
+        setNewArtist({...newArtist, is_favorite: !newArtist.is_favorite})
     }
 
     function handleSubmit(e) {
         e.preventDefault()
-        addSongToLibrary()
+        addArtistToLibrary()
     }
     return (
         <div className="AddFrom">
-            <h1>Add A Song</h1>
+            <h1>Add An Artist</h1>
             <form className="AddForm__form" onSubmit={handleSubmit}>
-                <label htmlFor="name">
-                    Song Name:
-                    <br />
-                    <input 
-                        type="text"
-                        id="name"
-                        value={newSong.name}
-                        onChange={handleTextChange}
-                        required
-                    />
-                </label>
-                <br />
-                <label htmlFor="artist">
+                <label htmlFor="artist_name">
                     Artist Name:
                     <br />
                     <input 
                         type="text"
-                        id="artist"
-                        value={newSong.artist}
+                        id="artist_name"
+                        value={newArtist.artist_name}
                         onChange={handleTextChange}
                         required
                     />
                 </label>
                 <br />
-                <label htmlFor="album">
-                    Album Name:
-                    <br />
-                    <input
-                        type="text"
-                        id="album"
-                        value={newSong.album}
-                        onChange={handleTextChange}
-                    />
-                </label>
-                <br />
-                <label htmlFor="time">
-                    Song Time:
-                    <br />
-                    <input
-                        type="text"
-                        id="time"
-                        value={newSong.time}
-                        onChange={handleTextChange}
-                    />
-                </label>
-                <br />
-                <label htmlFor="img_url">
-                    EP Image URL:
-                    <br />
-                    <input
-                        type="text"
-                        id="img_url"
-                        required
-                        value={newSong.img_url}
-                        onChange={handleTextChange}
-                    />
-                </label>
-                <br />
-                <label htmlFor="vid_url">
-                    Youtube URL:
+                <label htmlFor="website_url">
+                    Artist Homepage URL:
                     <br />
                     <input 
                         type="text"
-                        id="vid_url"
-                        value={newSong.vid_url}
+                        id="website_url"
+                        value={newArtist.website_url}
                         onChange={handleTextChange}
                         required
+                    />
+                </label>
+                <br />
+                <label htmlFor="artist_img_url">
+                    Artist Photo:
+                    <br />
+                    <input
+                        type="text"
+                        id="artist_img_url"
+                        value={newArtist.artist_img_url}
+                        onChange={handleTextChange}
+                    />
+                </label>
+                <br />
+                <label htmlFor="main_genre">
+                    Artist Main Genre:
+                    <br />
+                    <input
+                        type="text"
+                        id="main_genre"
+                        value={newArtist.main_genre}
+                        onChange={handleTextChange}
                     />
                 </label>
                 <br />
@@ -127,12 +101,12 @@ export default function SongAddForm() {
                         type="checkbox"
                         id="is_favorite"
                         onChange={handleCheckboxChange}
-                        checked={newSong.is_favorite}
+                        checked={newArtist.is_favorite}
                         required
                     />
                 </label>
                 <br />
-                <button type="submit">Add Song To Youtunes</button>
+                <button type="submit">Add Artist To Youtunes</button>
             </form>
         </div>
     )

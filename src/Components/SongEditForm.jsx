@@ -61,8 +61,8 @@ export default function SongEditForm() {
     }
 
     return (
-        <div className="SongEditFrom">
-            <form className="SongEditForm__form" onSubmit={handleSubmit}>
+        <div className="EditFrom">
+            <form className="EditForm__form" onSubmit={handleSubmit}>
                 <label htmlFor="name">
                     Song Name:
                     <br />
