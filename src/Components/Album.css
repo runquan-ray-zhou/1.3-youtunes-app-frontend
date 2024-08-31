@@ -27,6 +27,9 @@
     img:hover {
         border: 5px solid #4CE0D2;
     }
+    .album__name:hover {
+        color: #4CE0D2;
+    }
     .album__img {
         display: flex;
         justify-content: end;
