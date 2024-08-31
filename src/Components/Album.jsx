@@ -8,7 +8,7 @@ export default function Album({ album }) {
     let navigate = useNavigate()
 
     return (
-        <Link to={`/albums/${album.id}`}>
+        <Link to={`/albums/${album.id || album.album_id}`}>
             <div className="Album">
                 <div className="album__img">
                     <span>

@@ -8,7 +8,7 @@ export default function Artist({ artist }) {
     let navigate = useNavigate()
 
     return (
-        <Link to={`/artists/${artist.id}/songs`}>
+        <Link to={`/artists/${artist.id}/albums`}>
             <div className="Artist">
                 <div className="artist__img">
                     <span>

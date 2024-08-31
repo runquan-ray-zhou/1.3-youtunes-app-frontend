@@ -25,7 +25,7 @@ function App() {
             <Route path="/allsongs" element={<Index />} />
             <Route path="/add" element={<Add />} />
             <Route path="/artists/:artist_id" element={<Show />} />
-            <Route path="/artists/:artist_id/songs" element={<Show />} />
+            <Route path="/artists/:artist_id/albums" element={<Show />} />
             <Route path="/albums/:album_id" element={<Show />} />
             <Route path="/albums/:album_id/songs" element={<Show />} />
             <Route path="/albums/:album_id/songs/:id" element={<Show />} />

@@ -1,7 +1,7 @@
 .ArtistDetails{
-    padding: 20px 10px;
+    padding: 20px 0px;
     margin-top: 20px;
-    width: max-content;
+    width: 350px;
     border: 5px solid white;
     color: white;
     border-radius: 25px;
@@ -17,19 +17,7 @@
     .artist__name {
         font-size: 2em;
     }
-    .artist_songs {
-        img {   
-            display: none;
-        }
-        img:hover {
-            border: 1px solid #4CE0D2;
-        }
-        p:hover {
-            color: #4CE0D2;
-        }
-
-    }
-    img {
+    .artist__img {
         margin-top: 25px;
         width: 300px;
         border: 5px solid white ;
