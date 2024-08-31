@@ -65,7 +65,7 @@ export default function ArtistDetails() {
                 <div className="artist__albums">
                     {artistAlbums.map((album) => {
                         return <Album
-                        key={album.id}
+                        key={album.album_name}
                         album={album}
                         />
                     })}

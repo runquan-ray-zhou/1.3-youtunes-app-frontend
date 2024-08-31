@@ -20,7 +20,6 @@ export default function AlbumDetails() {
         fetch(`${API}/albums/${album_id}/songs`)
         .then((response) => response.json())
         .then((responseJSON) => {
-            console.log(responseJSON)
             setAlbum(responseJSON)
             setAlbumSongs(responseJSON.songs)
         }
