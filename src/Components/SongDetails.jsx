@@ -25,10 +25,8 @@ export default function SongDetails() {
         })
     }, [id, album_id, navigate])
 
-    console.log(song)
-
     function handleDelete() {
-        fetch(`${API}/artists/${artist_id}/songs/${id}`, {
+        fetch(`${API}/albums/${song.artist_id}/songs/${id}`, {
             method: "DELETE",
         })
         .then(() => navigate('/allsongs'))
@@ -60,7 +58,7 @@ export default function SongDetails() {
                     </span>
                 </div>
                 <div className="song__buttons">
-                <i className="fa-solid fa-circle-arrow-left" onClick={() => navigate(`/artists/${song.artist_id}/songs`)}></i>
+                <i className="fa-solid fa-circle-arrow-left" onClick={() => navigate(`/albums/${song.album_id}/`)}></i>
                 <i className="fa-solid fa-gear" onClick={() => navigate(`/songs/${id}/edit`)}></i>
                 <i className="fa-solid fa-trash-can" onClick={handleDelete}></i>
                 </div>

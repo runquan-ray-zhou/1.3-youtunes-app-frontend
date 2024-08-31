@@ -15,8 +15,6 @@ export default function SongAddForm() {
         time: "",
         img_url: "",
         song_vid_url: "",
-        // album_id: 1,
-        // artist_id: 1,
         is_favorite: false,
     })
 
@@ -37,16 +35,51 @@ export default function SongAddForm() {
 
     function handleTextChange(e) {
         setNewSong({...newSong, [e.target.id]: e.target.value})
-        
     }
     
     function handleCheckboxChange() {
         setNewSong({...newSong, is_favorite: !newSong.is_favorite})
     }
 
-    function handleSubmit(e) {
-        e.preventDefault()
-        addSongToLibrary()
+    async function addArtistId(artistName) {
+        try {
+            const response = await fetch(`${API}/artists`);
+            const responseJSON = await response.json();
+            const artist = responseJSON.find((artist) => artist.artist_name === artistName);
+            if (artist) {
+                setNewSong(prevSong => ({...prevSong, artist_id: artist.id}));
+            }
+        } catch (error) {
+            console.error('Error adding artist ID:', error);
+        }
+    }
+    
+    async function addAlbumId(albumName) {
+        try {
+            const response = await fetch(`${API}/albums`);
+            const responseJSON = await response.json();
+            console.log('Fetched albums:', responseJSON);
+            const album = responseJSON.find((album) => album.album_name === albumName);
+            console.log('Found album:', album);
+            if (album) {
+                setNewSong(prevSong => ({...prevSong, album_id: album.id}));
+            } else {
+                console.log('Album not found:', albumName);
+            }
+        } catch (error) {
+            console.error('Error adding album ID:', error);
+        }
+    }
+    
+    async function handleSubmit(e) {
+        e.preventDefault();
+        if (newSong.album) {
+            await addAlbumId(newSong.album);
+        }
+        if (newSong.song_artist) {
+            await addArtistId(newSong.song_artist);
+        }
+        await addSongToLibrary();
     }
     return (
         <div className="AddFrom">

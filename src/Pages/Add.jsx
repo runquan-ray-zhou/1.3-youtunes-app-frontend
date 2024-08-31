@@ -11,9 +11,9 @@ export default function Add() {
     return (
         <div className="Add">
             <div className="Add__header">
-                <h1 onClick={(e) => setView(e.target.innerHTML)}>Album</h1>
-                <h1 onClick={(e) => setView(e.target.innerHTML)}>Artist</h1>
-                <h1 onClick={(e) => setView(e.target.innerHTML)}>Song</h1>
+                <h1 onClick={(e) => setView(e.target.innerHTML)} style={{color: view === "Album" ? "#4CE0D2" : "white" }}>Album</h1>
+                <h1 onClick={(e) => setView(e.target.innerHTML)} style={{color: view === "Artist" ? "#4CE0D2" : "white" }}>Artist</h1>
+                <h1 onClick={(e) => setView(e.target.innerHTML)} style={{color: view === "Song" ? "#4CE0D2" : "white" }}>Song</h1>
             </div>
             <div className="Add__content">
                 {view === "Song" ? <SongAddForm /> : view === "Album" ? <AlbumAddForm /> : <ArtistAddForm />}
