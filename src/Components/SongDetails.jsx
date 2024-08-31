@@ -10,9 +10,7 @@ export default function SongDetails() {
     const [ song, setSong ] = useState({})
     
     const { id, album_id } = useParams()
-
-    console.log(album_id)
-    
+   
     let navigate = useNavigate()
 
     useEffect(() => {
