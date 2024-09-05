@@ -16,13 +16,14 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar />
+        <NavBar /> 
         <main>
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/allsongs" element={<Index />} />
+            <Route path="/add/:type" element={<Add />} />
             <Route path="/add" element={<Add />} />
             <Route path="/artists/:artist_id" element={<Show />} />
             <Route path="/artists/:artist_id/albums" element={<Show />} />
