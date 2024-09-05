@@ -6,6 +6,9 @@
     background-color: 041B15;
     color: white;
     border-radius: 25px;
+    h1 {
+        text-align: center;
+    }
 
     button {
         margin: 0;

@@ -6,22 +6,23 @@ const API = import.meta.env.VITE_API_URL
 
 export default function SongEditForm() {
 
-    let { id } = useParams();
+    let { id, album_id } = useParams();
     let navigate = useNavigate()
     
     const [currentSong, setCurrentSong] = useState({
-        name: "",
-        artist: "",
+        song_name: "",
+        song_artist: "",
         album: "",
         time: "",
         img_url: "",
-        vid_url: "",
+        song_vid_url: "",
         is_favorite: false,
     })
 
+    console.log(currentSong)
+
     function handleTextChange(e) {
         setCurrentSong({...currentSong, [e.target.id]: e.target.value})
-        
     }
     
     function handleCheckboxChange() {
@@ -29,7 +30,7 @@ export default function SongEditForm() {
     }
 
     function updateSong() {
-        fetch(`${API}/songs/${id}`, {
+        fetch(`${API}/albums/${album_id}/songs/${id}`, {
             method: "PUT",
             body: JSON.stringify(currentSong),
             headers: {
@@ -37,7 +38,7 @@ export default function SongEditForm() {
             }
         })
         .then((response) => {
-            navigate(`/songs/${id}`);
+            navigate(`/albums/${album_id}/songs/${id}`);
         })
         .catch((error) => {
             navigate("/notfound")
@@ -46,9 +47,9 @@ export default function SongEditForm() {
     }
 
     useEffect(() => {
-        fetch(`${API}/songs/${id}`)
+        fetch(`${API}/albums/${album_id}/songs/${id}`)
         .then((response) => response.json())
-        .then((responseJSON) => setCurrentSong(responseJSON))
+        .then((responseJSON) => setCurrentSong(responseJSON.song))
         .catch(() => {
             navigate("/notfound")
             console.error(error)
@@ -62,26 +63,27 @@ export default function SongEditForm() {
 
     return (
         <div className="EditFrom">
+            <h1>Edit A Song</h1>
             <form className="EditForm__form" onSubmit={handleSubmit}>
-                <label htmlFor="name">
+                <label htmlFor="song_name">
                     Song Name:
                     <br />
                     <input 
                         type="text"
-                        id="name"
-                        value={currentSong.name}
+                        id="song_name"
+                        value={currentSong.song_name}
                         onChange={handleTextChange}
                         required
                     />
                 </label>
                 <br />
-                <label htmlFor="artist">
+                <label htmlFor="song_artist">
                     Artist Name:
                     <br />
                     <input 
                         type="text"
-                        id="artist"
-                        value={currentSong.artist}
+                        id="song_artist"
+                        value={currentSong.song_artist}
                         onChange={handleTextChange}
                         required
                     />
@@ -121,13 +123,13 @@ export default function SongEditForm() {
                     />
                 </label>
                 <br />
-                <label htmlFor="vid_url">
+                <label htmlFor="song_vid_url">
                     Youtube URL:
                     <br />
                     <input 
                         type="text"
-                        id="vid_url"
-                        value={currentSong.vid_url}
+                        id="song_vid_url"
+                        value={currentSong.song_vid_url}
                         onChange={handleTextChange}
                         required
                     />

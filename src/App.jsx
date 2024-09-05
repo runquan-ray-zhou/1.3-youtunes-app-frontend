@@ -29,7 +29,7 @@ function App() {
             <Route path="/albums/:album_id" element={<Show />} />
             <Route path="/albums/:album_id/songs" element={<Show />} />
             <Route path="/albums/:album_id/songs/:id" element={<Show />} />
-            <Route path="/artists/:artist_id/songs/:id/edit" element={<Edit />} />
+            <Route path="/albums/:album_id/songs/:id/edit" element={<Edit />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>
