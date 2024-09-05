@@ -32,9 +32,6 @@ export default function AlbumAddForm() {
             }
         })
         .then(console.log("album added"))
-        // .then((resJSON) => {
-        //     navigate(`/albums/${resJSON.id}`)
-        // })
         .catch(error => console.error(error))
     }
 

@@ -18,10 +18,10 @@ export default function SongAddForm() {
         is_favorite: false,
     })
 
-    function addSongToLibrary() {
+    function addSongToLibrary(artistId, albumId) {
         fetch(`${API}/addsong`, {
             method: "POST",
-            body: JSON.stringify(newSong),
+            body: JSON.stringify({...newSong, artist_id: artistId, album_id: albumId}),
             headers: {
                 "Content-Type": "application/json"
             }
@@ -48,6 +48,7 @@ export default function SongAddForm() {
             const artist = responseJSON.find((artist) => artist.artist_name === artistName);
             if (artist) {
                 setNewSong(prevSong => ({...prevSong, artist_id: artist.id}));
+                return artist.id;
             }
         } catch (error) {
             console.error('Error adding artist ID:', error);
@@ -63,6 +64,7 @@ export default function SongAddForm() {
             console.log('Found album:', album);
             if (album) {
                 setNewSong(prevSong => ({...prevSong, album_id: album.id}));
+                return album.id;
             } else {
                 console.log('Album not found:', albumName);
             }
@@ -73,13 +75,19 @@ export default function SongAddForm() {
     
     async function handleSubmit(e) {
         e.preventDefault();
+
+        let artistId, albumId;
+    try {
         if (newSong.album) {
-            await addAlbumId(newSong.album);
+            albumId = await addAlbumId(newSong.album);
         }
         if (newSong.song_artist) {
-            await addArtistId(newSong.song_artist);
+            artistId = await addArtistId(newSong.song_artist);
         }
-        await addSongToLibrary();
+    } catch {
+        console.error('Error adding artist or album ID:', error);
+    }
+        await addSongToLibrary(artistId, albumId);
     }
     return (
         <div className="AddFrom">
