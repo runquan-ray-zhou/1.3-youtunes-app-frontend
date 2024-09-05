@@ -17,23 +17,22 @@ export default function ArtistAddForm() {
     })
 
     function addArtistToLibrary() {
-        fetch(`${API}/artists/songs`, {
+        fetch(`${API}/artists`, {
             method: "POST",
-            body: JSON.stringify(newSong),
+            body: JSON.stringify(newArtist),
             headers: {
                 "Content-Type": "application/json"
             }
         })
         .then(res => res.json())
         .then((resJSON) => {
-            navigate(`/songs/${resJSON.id}`)
+            navigate(`/artists/${resJSON.id}/albums`)
         })
         .catch(error => console.error(error))
     }
 
     function handleTextChange(e) {
         setNewArtist({...newArtist, [e.target.id]: e.target.value})
-        
     }
     
     function handleCheckboxChange() {
