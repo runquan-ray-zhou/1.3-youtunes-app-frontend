@@ -1,8 +1,21 @@
-# React + Vite
+To-do
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[ ] Create song functionality
+[ ] Read song functionality
+[ ] Update song functionality
+[ ] Delete song functionality
 
-Currently, two official plugins are available:
+[ ] Create artist functionality
+[ ] Read artist functionality
+[ ] Update artist functionality
+[ ] Delete artist functionality
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[ ] Create album functionality
+[ ] Read album functionality
+[ ] Update album functionality
+[ ] Delete album functionality
+
+[ ] Create playlist functionality
+[ ] Read playlist functionality
+[ ] Update playlist functionality
+[ ] Delete playlist functionality
