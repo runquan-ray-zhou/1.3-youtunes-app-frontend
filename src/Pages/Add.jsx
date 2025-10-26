@@ -1,28 +1,47 @@
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import SongAddForm from "../Components/SongAddForm";
 import AlbumAddForm from "../Components/AlbumAddForm";
 import ArtistAddForm from "../Components/ArtistAddForm";
-import "./Add.css"
+
+import "./Add.css";
 
 export default function Add() {
+  const { type } = useParams();
+  const navigate = useNavigate();
 
-    const { type } = useParams();
+  // Normalize the view from the URL param, defaulting to "Song"
+  const normalizedView = type ? type.toLowerCase() : "song";
 
-    const [view, setView] = useState(type || "Song")
+  const handleNavigation = (newView) => {
+    // Navigate using lowercase for URL consistency
+    navigate(`/add/${newView.toLowerCase()}`);
+  };
 
-    console.log(type)
-    
-    return (
-        <div className="Add">
-            <div className="Add__header">
-                <h1 onClick={(e) => setView(e.target.innerHTML)} style={{color: view[0].toUpperCase() + view.slice(1) === "Album" ? "#4CE0D2" : "white" }}>Album</h1>
-                <h1 onClick={(e) => setView(e.target.innerHTML)} style={{color: view[0].toUpperCase() + view.slice(1) === "Artist" ? "#4CE0D2" : "white" }}>Artist</h1>
-                <h1 onClick={(e) => setView(e.target.innerHTML)} style={{color: view[0].toUpperCase() + view.slice(1) === "Song" ? "#4CE0D2" : "white" }}>Song</h1>
-            </div>
-            <div className="Add__content">
-                {view[0].toUpperCase() + view.slice(1) === "Song" ? <SongAddForm /> : view[0].toUpperCase() + view.slice(1) === "Album" ? <AlbumAddForm /> : <ArtistAddForm />}
-            </div>
-        </div>
-    )
+  const getColor = (viewName) =>
+    normalizedView === viewName.toLowerCase() ? "#4CE0D2" : "white";
+
+  return (
+    <div className="Add">
+      <div className="Add__header">
+        {["Album", "Artist", "Song"].map((viewName) => (
+          <h1
+            key={viewName}
+            onClick={() => handleNavigation(viewName)}
+            style={{ color: getColor(viewName) }}
+          >
+            {viewName}
+          </h1>
+        ))}
+      </div>
+      <div className="Add__content">
+        {normalizedView === "song" ? (
+          <SongAddForm />
+        ) : normalizedView === "album" ? (
+          <AlbumAddForm />
+        ) : (
+          <ArtistAddForm />
+        )}
+      </div>
+    </div>
+  );
 }
