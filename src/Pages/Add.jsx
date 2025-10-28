@@ -2,7 +2,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import SongAddForm from "../Components/SongAddForm";
 import AlbumAddForm from "../Components/AlbumAddForm";
 import ArtistAddForm from "../Components/ArtistAddForm";
-
 import "./Add.css";
 
 export default function Add() {

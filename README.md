@@ -1,14 +1,14 @@
 # To-do
 
 - [ ] Figma board
-- [ ] Add a song functionality
+- [x] Add a song functionality
 - [ ] Look up a song functionality / Search bar
-- [ ] Update a song functionality
-- [ ] Delete a song functionality
+- [x] Update a song functionality
+- [x] Delete a song functionality
 
 - [x] Add an artist functionality
 - [ ] Look up an artist functionality / Search bar
-- [ ] Update an artist functionality
+- [x] Update an artist functionality
 - [x] Delete an artist functionality
 
 - [ ] Add a an album functionality

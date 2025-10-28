@@ -1,12 +1,21 @@
-import { useParams } from "react-router-dom";
 import SongEditForm from "../Components/SongEditForm";
+import ArtistEditForm from "../Components/ArtistEditForm";
+import "./Edit.css";
 
-export default function Edit() {
-  let { id, album_id } = useParams();
-  console.log(id, album_id);
+export default function Edit({ type }) {
+  const normalizedType = type ? type.toLowerCase() : "";
+
   return (
     <div className="Edit">
-      <SongEditForm />
+      <div className="Edit__content">
+        {normalizedType === "artist" ? (
+          <ArtistEditForm />
+        ) : normalizedType === "song" ? (
+          <SongEditForm />
+        ) : (
+          <p>Album Edit</p>
+        )}
+      </div>
     </div>
   );
 }
