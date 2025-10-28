@@ -31,6 +31,10 @@ function App() {
               element={<Edit type={"artist"} />}
             />
             <Route path="/artists/:artist_id/albums" element={<Show />} />
+            <Route
+              path="/albums/:album_id/edit"
+              element={<Edit type={"album"} />}
+            />
             <Route path="/albums/:album_id" element={<Show />} />
             <Route path="/albums/:album_id/songs" element={<Show />} />
             <Route path="/albums/:album_id/songs/:id" element={<Show />} />

@@ -1,5 +1,6 @@
 import SongEditForm from "../Components/SongEditForm";
 import ArtistEditForm from "../Components/ArtistEditForm";
+import AlbumEditForm from "../Components/AlbumEditForm";
 import "./Edit.css";
 
 export default function Edit({ type }) {
@@ -13,7 +14,7 @@ export default function Edit({ type }) {
         ) : normalizedType === "song" ? (
           <SongEditForm />
         ) : (
-          <p>Album Edit</p>
+          <AlbumEditForm />
         )}
       </div>
     </div>

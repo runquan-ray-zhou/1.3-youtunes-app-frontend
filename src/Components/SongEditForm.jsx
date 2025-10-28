@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./SongEditForm.css";
+import "./EditForm.css";
 
 const API = import.meta.env.VITE_API_URL;
 

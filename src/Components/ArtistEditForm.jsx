@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./ArtistEditForm.css";
+import "./EditForm.css";
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -50,8 +50,7 @@ export default function ArtistEditForm() {
       .then((responseJSON) => {
         setCurrentArtist(responseJSON);
       })
-
-      .catch(() => {
+      .catch((error) => {
         navigate("/notfound");
         console.error(error);
       });
