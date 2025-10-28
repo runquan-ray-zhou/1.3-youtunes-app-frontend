@@ -79,8 +79,8 @@ export default function ArtistDetails() {
       </div>
       <div className="artist__buttons">
         <i
-          className="fa-solid fa-circle-arrow-left"
-          onClick={() => navigate(`/home`)}
+          className="fa-solid fa-gear"
+          onClick={() => navigate(`/album/${album_id}songs/${id}/edit`)}
         ></i>
         <i
           className="fa-solid fa-compact-disc"

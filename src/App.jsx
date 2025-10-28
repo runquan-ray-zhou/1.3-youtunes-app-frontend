@@ -26,6 +26,7 @@ function App() {
             <Route path="/add/:type" element={<Add />} />
             <Route path="/add" element={<Add />} />
             <Route path="/artists/:artist_id" element={<Show />} />
+            <Route path="/artists/:artist_id/edit" element={<Edit />} />
             <Route path="/artists/:artist_id/albums" element={<Show />} />
             <Route path="/albums/:album_id" element={<Show />} />
             <Route path="/albums/:album_id/songs" element={<Show />} />
