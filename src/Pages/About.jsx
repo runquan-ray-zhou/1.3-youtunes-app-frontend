@@ -20,7 +20,7 @@ export default function About() {
           <i className="fa-solid fa-code"></i>
         </a>
       </div>
-      <p>All Rights Reserved 2024</p>
+      <p>All Rights Reserved 2025</p>
     </div>
   );
 }

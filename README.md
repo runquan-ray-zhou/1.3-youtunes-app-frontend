@@ -11,10 +11,10 @@
 - [x] Update an artist functionality
 - [x] Delete an artist functionality
 
-- [ ] Add a an album functionality
+- [x] Add a an album functionality
 - [ ] Look up an album functionality / Search bar
-- [ ] Update an album functionality
-- [ ] Delete an album functionality
+- [x] Update an album functionality
+- [x] Delete an album functionality
 
 - [ ] Add a an playlist functionality
 - [ ] Look up an playlist functionality / Search bar
