@@ -1,6 +1,5 @@
 .ArtistDetails {
-  padding: 20px 0px;
-  margin-top: 20px;
+  padding-bottom: 10px;
   width: 350px;
   border: 5px solid white;
   color: white;
@@ -18,14 +17,13 @@
     font-size: 2em;
   }
   .artist__img {
-    margin-top: 25px;
+    margin-top: 20px;
     width: 300px;
     border: 5px solid white;
   }
   img:hover {
     cursor: auto;
   }
-
   a,
   p {
     color: white;

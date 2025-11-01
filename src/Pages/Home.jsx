@@ -25,11 +25,7 @@ export default function Home() {
     <div className="Home">
       <div className="Home__header">
         {navItems.map((item) => (
-          <h1
-            key={item}
-            onClick={() => handleNavigation(item)}
-            style={{ color: getColor(item) }}
-          >
+          <h1 key={item} onClick={() => handleNavigation(item)}>
             {item}
           </h1>
         ))}

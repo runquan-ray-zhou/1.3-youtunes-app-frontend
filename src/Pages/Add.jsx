@@ -23,11 +23,7 @@ export default function Add() {
     <div className="Add">
       <div className="Add__header">
         {["Album", "Artist", "Song"].map((viewName) => (
-          <h1
-            key={viewName}
-            onClick={() => handleNavigation(viewName)}
-            style={{ color: getColor(viewName) }}
-          >
+          <h1 key={viewName} onClick={() => handleNavigation(viewName)}>
             {viewName}
           </h1>
         ))}

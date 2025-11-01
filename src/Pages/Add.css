@@ -1,16 +1,29 @@
 .Add {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 10px;
-    color: white;
-    cursor: pointer;
-    .Add__header {
-        display: flex;
-        justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+}
 
-        h1:hover {
-            color: #4CE0D2; 
-        }
-    }
+.Add__header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.Add__header h1 {
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.Add__nav-active {
+  color: #4ce0d2;
+}
+
+.Add__header h1:hover {
+  color: #4ce0d2;
 }

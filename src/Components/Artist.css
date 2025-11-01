@@ -1,62 +1,89 @@
 .Artist:hover {
-    color: #4CE0D2;
+  color: #4ce0d2;
 }
 
 .Artist {
-    padding: 10px 20px 10px 10px;
+  padding: 10px 20px 10px 10px;
+  width: max-content;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+
+  .artist__img:hover {
+    border: 5px solid #4ce0d2;
+  }
+
+  .artist__details {
+    margin: auto;
     width: max-content;
     display: flex;
-    justify-content: end;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    span {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
     }
-    img {   
-        margin-right: 20px;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        border: 1px solid white;
-        cursor:pointer;
-    }
-    img:hover {
-        border: 5px solid #4CE0D2;
-    }
-    .artist__img {
-        display: flex;
-        justify-content: end;
-        align-items: center;
-    }
-    
-    .artist__details{
-        margin: auto;
-        width: max-content;
-        display: flex;
-        flex-direction: column;
-        align-items:flex-start;
-    
-        p {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-    }
-    .artist__name {
-        font-size: large;
-        font-weight: 900;
-    }
-    .artist__main_genre {
-        font-size: small;
-        font-weight: 100;
-    }
+  }
+  .artist__name {
+    font-size: large;
+    font-weight: 900;
+  }
+  .artist__main_genre {
+    font-size: small;
+    font-weight: 100;
+  }
 }
 
+.artist__img {
+  /* CONTAINER STYLES - Defines the window size and shape */
+  margin-right: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Creates the circular window */
+  border: 1px solid white;
+  cursor: pointer;
 
-a:link { text-decoration: none; }
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:active { text-decoration: none; }
+  /* CRITICAL: Hides any content (the image) that goes outside this boundary */
+  overflow: hidden;
+
+  /* Remove these since the image handles alignment now */
+  /* display: flex; 
+  justify-content: end;
+  align-items: center; */
+
+  /* The image styles need to be moved or modified */
+}
+
+/* IMAGE STYLES - Ensures the image covers the container */
+.artist__img img {
+  /* object-fit is the key here. It tells the image how to fill its container 
+    without being distorted, similar to 'background-size: cover'. 
+  */
+  object-fit: cover;
+
+  /* Make the image always fill the full dimensions of its parent (.artist__img) */
+  width: 100%;
+  height: 100%;
+
+  /* You only need border-radius on the div if you use overflow: hidden; */
+  border-radius: 0;
+  /* No need for a border here, the div has one */
+  border: none;
+  /* No need for margin-right here */
+  margin-right: 0;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}

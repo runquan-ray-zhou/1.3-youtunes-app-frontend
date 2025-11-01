@@ -1,44 +1,42 @@
-.SongDetails{
-    padding: 20px 10px;
-    margin-top: 20px;
-    width: max-content;
-    border: 5px solid white;
-    color: white;
-    border-radius: 25px;
+.SongDetails {
+  padding: 10px;
+  width: max-content;
+  border: 5px solid white;
+  color: white;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .song__details {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    .song__details {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .song__name {
-        font-size: 2em;
-    }
-    img {
-        margin-top: 25px;
-        width: 300px;
-        border: 5px solid white ;
-    }
-    img:hover {
-        cursor:auto;
-    }
-    p {
-        color: white;
-    }
-    .fa-solid {
-        margin: 5px 30px;
-        font-size: 50px;
-        color: white;
-        cursor: pointer;
-    }
-    .fa-solid:hover {
-        color: #4CE0D2;
-    }
-    .song__buttons {
-        margin-top: 10px;
-    }
-
+  }
+  .song__name {
+    font-size: 2em;
+  }
+  img {
+    margin-top: 10px;
+    width: 300px;
+    border: 5px solid white;
+  }
+  img:hover {
+    cursor: auto;
+  }
+  p {
+    color: white;
+  }
+  .fa-solid {
+    margin: 5px 30px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+  }
+  .fa-solid:hover {
+    color: #4ce0d2;
+  }
+  .song__buttons {
+    margin-top: 10px;
+  }
 }

@@ -10,9 +10,7 @@ export default function Artist({ artist }) {
     <Link to={`/artists/${artist.id}/albums`}>
       <div className="Artist">
         <div className="artist__img">
-          <span>
-            <img src={artist.artist_img_url} alt={artist.artist_name} />
-          </span>
+          <img src={artist.artist_img_url} alt={artist.artist_name} />
         </div>
         <div className="artist__details">
           <p className="artist__name">{artist.artist_name}</p>
